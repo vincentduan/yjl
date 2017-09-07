@@ -9,3 +9,9 @@
 yjl.iml
 /bin/
 *.iml
+yjl-common/target/
+yjl-manager/target/
+yjl-parent/target/
+yjl-parent/.idea/
+yjl-service/target/
+yjl-web/target/
