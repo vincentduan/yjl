@@ -18,9 +18,7 @@
 	
 	
 	<!-- 资源映射 -->
-	<mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
-	<mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
-	<mvc:resources mapping="/json/**" location="/WEB-INF/json/" />
+	<mvc:resources mapping="/resources/**" location="/resources/" />
 	<!--允许跨域访问-->
 	<mvc:cors>
 		<mvc:mapping path="/**" allowed-origins="*" allow-credentials="true" max-age="1800" allowed-methods="GET,POST,OPTIONS"/>
