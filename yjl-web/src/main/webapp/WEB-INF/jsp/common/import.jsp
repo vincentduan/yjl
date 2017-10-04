@@ -21,3 +21,4 @@
 <script src="<%=basePath%>resources/js/owl.carousel.js"></script>
 <script type="text/javascript" src="<%=basePath%>resources/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 <script type="text/javascript" src="<%=basePath%>resources/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript" src="<%=basePath%>resources/js/yjl.js" charset="UTF-8"></script>

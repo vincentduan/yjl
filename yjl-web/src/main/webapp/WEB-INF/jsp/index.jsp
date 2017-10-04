@@ -349,7 +349,7 @@
 											<div class="zoom-caption">
 												<p>北京国际饭店</p>
 											</div>
-											<img src="images/beijingfandianhuiyizhongxin.jpg" />
+											<img src="<%=basePath%>resources/images/beijingfandianhuiyizhongxin.jpg" />
 										</div>
 										<div class="wrapper">
 											<h5 class="vid-name"><a href="#">2017年拍卖会</a></h5>
@@ -371,7 +371,7 @@
 											<div class="zoom-caption">
 												<p>北京国际饭店</p>
 											</div>
-											<img src="images/beijingfandianhuiyizhongxin.jpg" />
+											<img src="<%=basePath%>resources/images/beijingfandianhuiyizhongxin.jpg" />
 										</div>
 										<div class="wrapper">
 											<h5 class="vid-name"><a href="#">2017年拍卖会</a></h5>
@@ -393,7 +393,7 @@
 											<div class="zoom-caption">
 												<p>北京国际饭店</p>
 											</div>
-											<img src="images/beijingfandianhuiyizhongxin.jpg" />
+											<img src="<%=basePath%>resources/images/beijingfandianhuiyizhongxin.jpg" />
 										</div>
 										<div class="wrapper">
 											<h5 class="vid-name"><a href="#">2017年拍卖会</a></h5>
@@ -417,7 +417,7 @@
 											<div class="zoom-caption">
 												<p>翡翠</p>
 											</div>
-											<img src="images/photo_600_400_08.jpg" />
+											<img src="<%=basePath%>resources/images/photo_600_400_08.jpg" />
 										</div>
 										<div class="wrapper">
 											<h5 class="vid-name"><a href="#">翡翠戒指</a></h5>
@@ -439,7 +439,7 @@
 											<div class="zoom-caption">
 												<p>玉器</p>
 											</div>
-											<img src="images/photo_600_400_06.jpg" />
+											<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
 										</div>
 										<div class="wrapper">
 											<h5 class="vid-name"><a href="#">玉雕</a></h5>
@@ -461,7 +461,7 @@
 											<div class="zoom-caption">
 												<p>玉器</p>
 											</div>
-											<img src="images/photo_600_400_04.jpg" />
+											<img src="<%=basePath%>resources/images/photo_600_400_04.jpg" />
 										</div>
 										<div class="wrapper">
 											<h5 class="vid-name"><a href="#">玉佩</a></h5>
@@ -489,7 +489,7 @@
 												</a>
 												<p>敬请期待</p>
 											</div>
-											<img src="images/4.jpg" />
+											<img src="<%=basePath%>resources/images/4.jpg" />
 										</div>
 										<div class="wrapper">
 											<h5 class="vid-name"><a href="#">敬请期待</a></h5>
@@ -515,7 +515,7 @@
 												</a>
 												<p>敬请期待</p>
 											</div>
-											<img src="images/4.jpg" />
+											<img src="<%=basePath%>resources/images/4.jpg" />
 										</div>
 										<div class="wrapper">
 											<h5 class="vid-name"><a href="#">敬请期待</a></h5>
@@ -541,7 +541,7 @@
 												</a>
 												<p>敬请期待</p>
 											</div>
-											<img src="images/4.jpg" />
+											<img src="<%=basePath%>resources/images/4.jpg" />
 										</div>
 										<div class="wrapper">
 											<h5 class="vid-name"><a href="#">敬请期待</a></h5>

@@ -42,6 +42,11 @@
     </profiles>
 
     <dependencies>
+        <dependency>
+            <groupId>com.yjl</groupId>
+            <artifactId>yjl-commom</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!--引入其他相关jar-->
         <!-- Spring -->
         <dependency>
@@ -80,6 +85,20 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>4.1.7.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
         </dependency>
     </dependencies>
     <build>

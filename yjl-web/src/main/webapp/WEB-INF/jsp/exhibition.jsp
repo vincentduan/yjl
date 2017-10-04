@@ -1,18 +1,15 @@
-<!DOCTYPE html>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>新版页面-首页</title>
-	<link href="./css/bootstrap.min.css" rel="stylesheet">
-	<link href="./css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="./css/default.css" rel="stylesheet">
-	<link href="./css/normalize.css" rel="stylesheet">
-	<link href="./css/site.css" rel="stylesheet">
-	<link href="./css/owl.carousel.css" rel="stylesheet">
-    <link href="./css/owl.theme.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
-	<link rel="stylesheet" href="./css/font-awesome.min.css"  type="text/css">
-	<link href="./css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+	<title>新版页面-在线展示</title>
+	<%
+		String path = request.getContextPath();
+		String basePath = request.getScheme() + "://"
+				+ request.getServerName() + ":" + request.getServerPort()
+				+ path + "/";
+	%>
+	<jsp:include page="common/import.jsp" />
 </head>
 <body>
 <header>
@@ -82,7 +79,7 @@
 				<div class="box">
 					<div class="row">
 						<div class="col-md-3">
-							<img src="images/photo_600_400_06.jpg" />
+							<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
 							<h5><a href="#">Marshall, Will, and Holly on a Routine Expedition</a></h5>
 							<span><i class="fa fa-heart"></i> 1,200 / <i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"> / </i> 10 <i class="fa fa-eye"></i> 945</span>
 							<span class="rating">
@@ -95,7 +92,7 @@
 							<p>Marshall, Will, and Holly on a routine expedition, met the greatest earthquake ever known. High on the rapids, it struck their tiny raft! And plunged them down a thousand feet below…...</p>
 						</div>
 						<div class="col-md-3">
-							<img src="images/photo_600_400_06.jpg" />
+							<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
 							<h5><a href="#">Your Tread Must be Light and Sure as Though Your Path...</a></h5>
 							<span><i class="fa fa-heart"></i> 1,200 / <i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"> / </i> 3 <i class="fa fa-eye"></i> 1007</span>
 							<span class="rating">
@@ -108,7 +105,7 @@
 							<p>There once was a story about a man who could turn invisible. I thought it was only a story… until it happened to me. Ok, so here’s how it works: there’s this stuff called...</p>
 						</div>
 						<div class="col-md-3">
-							<img src="images/photo_600_400_06.jpg" />
+							<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
 							<h5><a href="#">Your Tread Must be Light and Sure as Though Your Path...</a></h5>
 							<span><i class="fa fa-heart"></i> 1,200 / <i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"> / </i> 3 <i class="fa fa-eye"></i> 1007</span>
 							<span class="rating">
@@ -121,7 +118,7 @@
 							<p>There once was a story about a man who could turn invisible. I thought it was only a story… until it happened to me. Ok, so here’s how it works: there’s this stuff called...</p>
 						</div>
 						<div class="col-md-3">
-							<img src="images/photo_600_400_06.jpg" />
+							<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
 							<h5><a href="#">Your Tread Must be Light and Sure as Though Your Path...</a></h5>
 							<span><i class="fa fa-heart"></i> 1,200 / <i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"> / </i> 3 <i class="fa fa-eye"></i> 1007</span>
 							<span class="rating">
@@ -136,7 +133,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-3">
-							<img src="images/photo_600_400_06.jpg" />
+							<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
 							<h5><a href="#">Marshall, Will, and Holly on a Routine Expedition</a></h5>
 							<span><i class="fa fa-heart"></i> 1,200 / <i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"> / </i> 10 <i class="fa fa-eye"></i> 945</span>
 							<span class="rating">
@@ -149,7 +146,7 @@
 							<p>Marshall, Will, and Holly on a routine expedition, met the greatest earthquake ever known. High on the rapids, it struck their tiny raft! And plunged them down a thousand feet below…...</p>
 						</div>
 						<div class="col-md-3">
-							<img src="images/photo_600_400_06.jpg" />
+							<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
 							<h5><a href="#">Your Tread Must be Light and Sure as Though Your Path...</a></h5>
 							<span><i class="fa fa-heart"></i> 1,200 / <i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"> / </i> 3 <i class="fa fa-eye"></i> 1007</span>
 							<span class="rating">
@@ -162,7 +159,7 @@
 							<p>There once was a story about a man who could turn invisible. I thought it was only a story… until it happened to me. Ok, so here’s how it works: there’s this stuff called...</p>
 						</div>
 						<div class="col-md-3">
-							<img src="images/photo_600_400_06.jpg" />
+							<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
 							<h5><a href="#">Your Tread Must be Light and Sure as Though Your Path...</a></h5>
 							<span><i class="fa fa-heart"></i> 1,200 / <i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"> / </i> 3 <i class="fa fa-eye"></i> 1007</span>
 							<span class="rating">
@@ -175,7 +172,7 @@
 							<p>There once was a story about a man who could turn invisible. I thought it was only a story… until it happened to me. Ok, so here’s how it works: there’s this stuff called...</p>
 						</div>
 						<div class="col-md-3">
-							<img src="images/photo_600_400_06.jpg" />
+							<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
 							<h5><a href="#">Your Tread Must be Light and Sure as Though Your Path...</a></h5>
 							<span><i class="fa fa-heart"></i> 1,200 / <i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"> / </i> 3 <i class="fa fa-eye"></i> 1007</span>
 							<span class="rating">
@@ -264,13 +261,6 @@
 		</div>
 	</footer>
 	<!-- Footer -->
-<script src="./js/jquery-1.11.1.js"></script>
-<script src="./js/jquery.bootstrap.newsbox.min.js"></script>
-<script src="./js/bootstrap.min.js"></script>
-<script src="./js/owl.carousel.js"></script>
-<script type="text/javascript" src="./js/yjl.js" charset="UTF-8"></script>
-<script type="text/javascript" src="./js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-<script type="text/javascript" src="./js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
 <script type="text/javascript">
 	$(function (){
 		$(".demo1").bootstrapNews({

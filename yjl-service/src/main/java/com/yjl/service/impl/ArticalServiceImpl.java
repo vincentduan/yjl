@@ -16,7 +16,7 @@ public class ArticalServiceImpl implements ArticalService {
     private ArticalMapper articalMapper;
 
     @Override
-    public List<Artical> getByExample(int id) {
+    public List<Artical> getByExample(Long id) {
         ArticalExample articalExample = new ArticalExample();
         ArticalExample.Criteria criteria = articalExample.createCriteria();
         criteria.andIdEqualTo(id);
@@ -25,7 +25,7 @@ public class ArticalServiceImpl implements ArticalService {
     }
 
     @Override
-    public Artical getById(int id) {
+    public Artical getById(Long id) {
         return articalMapper.selectByPrimaryKey(id);
     }
 }
