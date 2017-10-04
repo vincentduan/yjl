@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -12,7 +14,7 @@
 	<jsp:include page="common/import.jsp" />
 </head>
 <body>
-<header>
+<%--<header>
 	<!--start Navigation-->
 	<div class="container">
 		<h2>
@@ -61,129 +63,25 @@
 					</div>
 				</li>
 			</ul>
-			<!-- <ul class="list-inline navbar-right top-social">
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-				<li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
-				<li><a href="#"><i class="fa fa-youtube"></i></a></li>
-			</ul> -->
 		</div>
 	</nav>
 	<!--end Navigation-->
-</header>
+</header>--%>
+<jsp:include page="common/header.jsp"/>
 <div id="page-content" class="archive-page container">
 	<div class="">
 		<div class="row">
 			<div id="main-content" class="col-md-12">
 				<div class="box">
 					<div class="row">
-						<div class="col-md-3">
-							<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
-							<h5><a href="#">Marshall, Will, and Holly on a Routine Expedition</a></h5>
-							<span><i class="fa fa-heart"></i> 1,200 / <i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"> / </i> 10 <i class="fa fa-eye"></i> 945</span>
-							<span class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half"></i>
-							</span>
-							<p>Marshall, Will, and Holly on a routine expedition, met the greatest earthquake ever known. High on the rapids, it struck their tiny raft! And plunged them down a thousand feet below…...</p>
-						</div>
-						<div class="col-md-3">
-							<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
-							<h5><a href="#">Your Tread Must be Light and Sure as Though Your Path...</a></h5>
-							<span><i class="fa fa-heart"></i> 1,200 / <i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"> / </i> 3 <i class="fa fa-eye"></i> 1007</span>
-							<span class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half"></i>
-							</span>
-							<p>There once was a story about a man who could turn invisible. I thought it was only a story… until it happened to me. Ok, so here’s how it works: there’s this stuff called...</p>
-						</div>
-						<div class="col-md-3">
-							<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
-							<h5><a href="#">Your Tread Must be Light and Sure as Though Your Path...</a></h5>
-							<span><i class="fa fa-heart"></i> 1,200 / <i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"> / </i> 3 <i class="fa fa-eye"></i> 1007</span>
-							<span class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half"></i>
-							</span>
-							<p>There once was a story about a man who could turn invisible. I thought it was only a story… until it happened to me. Ok, so here’s how it works: there’s this stuff called...</p>
-						</div>
-						<div class="col-md-3">
-							<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
-							<h5><a href="#">Your Tread Must be Light and Sure as Though Your Path...</a></h5>
-							<span><i class="fa fa-heart"></i> 1,200 / <i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"> / </i> 3 <i class="fa fa-eye"></i> 1007</span>
-							<span class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half"></i>
-							</span>
-							<p>There once was a story about a man who could turn invisible. I thought it was only a story… until it happened to me. Ok, so here’s how it works: there’s this stuff called...</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-3">
-							<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
-							<h5><a href="#">Marshall, Will, and Holly on a Routine Expedition</a></h5>
-							<span><i class="fa fa-heart"></i> 1,200 / <i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"> / </i> 10 <i class="fa fa-eye"></i> 945</span>
-							<span class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half"></i>
-							</span>
-							<p>Marshall, Will, and Holly on a routine expedition, met the greatest earthquake ever known. High on the rapids, it struck their tiny raft! And plunged them down a thousand feet below…...</p>
-						</div>
-						<div class="col-md-3">
-							<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
-							<h5><a href="#">Your Tread Must be Light and Sure as Though Your Path...</a></h5>
-							<span><i class="fa fa-heart"></i> 1,200 / <i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"> / </i> 3 <i class="fa fa-eye"></i> 1007</span>
-							<span class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half"></i>
-							</span>
-							<p>There once was a story about a man who could turn invisible. I thought it was only a story… until it happened to me. Ok, so here’s how it works: there’s this stuff called...</p>
-						</div>
-						<div class="col-md-3">
-							<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
-							<h5><a href="#">Your Tread Must be Light and Sure as Though Your Path...</a></h5>
-							<span><i class="fa fa-heart"></i> 1,200 / <i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"> / </i> 3 <i class="fa fa-eye"></i> 1007</span>
-							<span class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half"></i>
-							</span>
-							<p>There once was a story about a man who could turn invisible. I thought it was only a story… until it happened to me. Ok, so here’s how it works: there’s this stuff called...</p>
-						</div>
-						<div class="col-md-3">
-							<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
-							<h5><a href="#">Your Tread Must be Light and Sure as Though Your Path...</a></h5>
-							<span><i class="fa fa-heart"></i> 1,200 / <i class="fa fa-calendar"></i> 25/3/2015 / <i class="fa fa-comment-o"> / </i> 3 <i class="fa fa-eye"></i> 1007</span>
-							<span class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star-half"></i>
-							</span>
-							<p>There once was a story about a man who could turn invisible. I thought it was only a story… until it happened to me. Ok, so here’s how it works: there’s this stuff called...</p>
-						</div>
+						<c:forEach items="${product_list}" var="product" varStatus="vs">
+							<div class="col-md-3">
+								<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
+								<h5><a href="#">${product.name}</a></h5>
+								<span><i class="fa fa-calendar"></i> <fmt:formatDate value="${product.create_time}" pattern="yyyy/MM/dd  HH:mm:ss" /> </span><br>
+								<p>${product.brief}</p>
+							</div>
+						</c:forEach>
 					</div>
 				</div>
 				<hr class="line">
@@ -191,18 +89,18 @@
 					<center>
 					<ul class="pagination">
 						<li>
-						  <a href="#" aria-label="Previous">
-							<span aria-hidden="true">&laquo;</span>
+						  <a href="#" id="page-before" aria-label="Previous">
+							<span aria-hidden="true">上一页</span>
 						  </a>
 						</li>
-						<li><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
+						<c:if test="${productPage.pageNo - 2 > 0}"><li><a href="#">${productPage.pageNo - 2}</a></li></c:if>
+						<c:if test="${productPage.pageNo - 1 > 0}"><li><a href="#">${productPage.pageNo - 1}</a></li></c:if>
+						<li><a href="#">当前页${productPage.pageNo}</a></li>
+						<c:if test="${productPage.totalCount/8 - productPage.pageNo > 0}"><li><a href="#">${productPage.pageNo +1 }</a></li></c:if>
+						<c:if test="${productPage.totalCount/8 - productPage.pageNo-1 > 0}"><li><a href="#">${productPage.pageNo +2 }</a></li></c:if>
 						<li>
-						  <a href="#" aria-label="Next">
-							<span aria-hidden="true">&raquo;</span>
+						  <a href="#" id="page-next" aria-label="Next">
+							<span aria-hidden="true">下一页</span>
 						  </a>
 						</li>
 					</ul>
@@ -299,30 +197,10 @@
 (function(){
 	urlinfo=window.location.href;
 	console.log("category=" + urlinfo.split("category=")[1]);
-	var category = urlinfo.split("category=")[1];
-	/*$.get("http://47.93.187.75:8080/yjl-web/json/exhibition.json", function(data){
-		console.log(data.zisha);
-	});*/
-	/*$.ajax({
-		url:"./exhibition.json",
-		//url:"http://47.93.187.75:8080/yjl-web/json/exhibition.json",
-		type:"GET",
-		dataType:"JSON",
-		success:function(data){
-			if(category == "3"){
-				var content = "";
-
-				for(i in data.zisha){
-					content += "<div class='item'><img src=\"" +data.zisha[i].imageId+ "\" alt=\"紫砂" + "\"></div>";
-					console.log(content);
-				}
-				$("#owl-demo-2").trigger('insertContent.owl',content);
-
-			}
-		}
-	})*/
-	exhibition(category);
-
+	//var category = urlinfo.split("category=")[1];
+	//var product_page = ${product_list};
+	//exhibition(product_page);
+	page(${category}, ${productPage.totalCount}, ${productPage.pageNo}, ${productPage.pageSize}, ${nextPage}, ${prePage});
 })();
 </script>
 </body>
