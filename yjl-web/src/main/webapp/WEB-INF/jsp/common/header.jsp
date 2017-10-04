@@ -29,33 +29,33 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="index.jsp">首页</a></li>
+                <li><a href="<%=basePath%>/index/index">首页</a></li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">在线展示<i class="fa fa-arrow-circle-o-down"></i></a>
                     <div class="dropdown-menu" style="margin-left: -203.625px;">
                         <div class="dropdown-inner">
                             <ul class="list-unstyled">
-                                <li><a href="exhibition.jsp?category=0">玉器</a></li>
-                                <li><a href="exhibition.jsp?category=1">瓷器</a></li>
-                                <li><a href="exhibition.jsp?category=2">书画</a></li>
-                                <li><a href="exhibition.jsp?category=3">紫砂</a></li>
+                                <li><a href="<%=basePath%>exhibition/index?category=2">玉器</a></li>
+                                <li><a href="<%=basePath%>exhibition/index?category=3">瓷器</a></li>
+                                <li><a href="<%=basePath%>exhibition/index?category=4">书画</a></li>
+                                <li><a href="<%=basePath%>exhibition/index?category=1">紫砂</a></li>
                             </ul>
                             <ul class="list-unstyled">
-                                <li><a href="exhibition.jsp?category=4">宝石</a></li>
-                                <li><a href="exhibition.jsp?category=5">奇石</a></li>
-                                <li><a href="exhibition.jsp?category=6">文玩</a></li>
+                                <li><a href="<%=basePath%>exhibition/index?category=5">宝石</a></li>
+                                <li><a href="<%=basePath%>exhibition/index?category=6">奇石</a></li>
+                                <li><a href="<%=basePath%>exhibition/index?category=7">文玩</a></li>
                             </ul>
                             <ul class="list-unstyled">
-                                <li><a href="exhibition.jsp?category=7">其他</a></li>
+                                <li><a href="<%=basePath%>exhibition/index?category=8">其他</a></li>
                             </ul>
                         </div>
                     </div>
                 </li>
-                <li class="dropdown"><a href="collection.jsp">收藏知识</a></li>
+                <li class="dropdown"><a href="<%=basePath%>collection/index">收藏知识</a></li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">关于我们 <i class="fa fa-arrow-circle-o-down"></i></a>
                     <div class="dropdown-menu">
                         <div class="dropdown-inner">
                             <ul class="list-unstyled">
-                                <li><a href="profile.jsp">企业简介</a></li>
+                                <li><a href="<%=basePath%>profile/index">企业简介</a></li>
                             </ul>
                         </div>
                     </div>

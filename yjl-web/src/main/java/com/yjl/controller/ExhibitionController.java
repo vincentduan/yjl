@@ -17,7 +17,7 @@ public class ExhibitionController {
     ProductService productService;
 
     @RequestMapping("/index")
-    public String index(@RequestParam("pageNo") int pageNo, @RequestParam("pageSize") int pageSize, @RequestParam("category") String category, ModelMap model) {
+    public String index(@RequestParam(value = "pageNo", defaultValue = "1") int pageNo, @RequestParam(value = "pageSize", defaultValue = "8") int pageSize, @RequestParam("category") String category, ModelMap model) {
         Page<Product> productPage = new Page<>();
         productPage.setPageSize(pageSize);
         productPage.setPageNo(pageNo);
