@@ -29,7 +29,7 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="<%=basePath%>/index/index">首页</a></li>
+                <li><a href="<%=basePath%>index/index">首页</a></li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">在线展示<i class="fa fa-arrow-circle-o-down"></i></a>
                     <div class="dropdown-menu" style="margin-left: -203.625px;">
                         <div class="dropdown-inner">

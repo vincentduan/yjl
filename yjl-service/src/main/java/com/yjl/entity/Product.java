@@ -11,15 +11,11 @@ public class Product {
 
     private String price;
 
-    private String brief;
-
     private String evaluate;
 
     private Integer like_num;
 
     private Date create_time;
-
-    private byte[] pic;
 
     public Long getId() {
         return id;
@@ -53,14 +49,6 @@ public class Product {
         this.price = price == null ? null : price.trim();
     }
 
-    public String getBrief() {
-        return brief;
-    }
-
-    public void setBrief(String brief) {
-        this.brief = brief == null ? null : brief.trim();
-    }
-
     public String getEvaluate() {
         return evaluate;
     }
@@ -83,13 +71,5 @@ public class Product {
 
     public void setCreate_time(Date create_time) {
         this.create_time = create_time;
-    }
-
-    public byte[] getPic() {
-        return pic;
-    }
-
-    public void setPic(byte[] pic) {
-        this.pic = pic;
     }
 }

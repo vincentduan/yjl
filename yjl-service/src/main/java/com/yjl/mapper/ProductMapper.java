@@ -2,6 +2,7 @@ package com.yjl.mapper;
 
 import com.yjl.entity.Product;
 import com.yjl.entity.ProductExample;
+import com.yjl.entity.ProductWithBLOBs;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -12,25 +13,25 @@ public interface ProductMapper {
 
     int deleteByPrimaryKey(Long id);
 
-    int insert(Product record);
+    int insert(ProductWithBLOBs record);
 
-    int insertSelective(Product record);
+    int insertSelective(ProductWithBLOBs record);
 
-    List<Product> selectByExampleWithBLOBs(ProductExample example);
+    List<ProductWithBLOBs> selectByExampleWithBLOBs(ProductExample example);
 
     List<Product> selectByExample(ProductExample example);
 
-    Product selectByPrimaryKey(Long id);
+    ProductWithBLOBs selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") Product record, @Param("example") ProductExample example);
+    int updateByExampleSelective(@Param("record") ProductWithBLOBs record, @Param("example") ProductExample example);
 
-    int updateByExampleWithBLOBs(@Param("record") Product record, @Param("example") ProductExample example);
+    int updateByExampleWithBLOBs(@Param("record") ProductWithBLOBs record, @Param("example") ProductExample example);
 
     int updateByExample(@Param("record") Product record, @Param("example") ProductExample example);
 
-    int updateByPrimaryKeySelective(Product record);
+    int updateByPrimaryKeySelective(ProductWithBLOBs record);
 
-    int updateByPrimaryKeyWithBLOBs(Product record);
+    int updateByPrimaryKeyWithBLOBs(ProductWithBLOBs record);
 
     int updateByPrimaryKey(Product record);
 }

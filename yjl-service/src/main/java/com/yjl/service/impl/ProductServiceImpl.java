@@ -50,7 +50,9 @@ public class ProductServiceImpl implements ProductService {
     public void queryByPage(Page<Product> page, Product product) {
         ProductExample productExample = new ProductExample();
         ProductExample.Criteria criteria = productExample.createCriteria();
-        criteria.andCategoryEqualTo(product.getCategory());
+        if(product.getCategory()!=null){
+            criteria.andCategoryEqualTo(product.getCategory());
+        }
         page2Example(page, productExample);
         if(page.isAutoCount()){
             int total = productMapper.countByExample(productExample);

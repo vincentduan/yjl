@@ -6,12 +6,12 @@
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="category" property="category" jdbcType="VARCHAR" />
     <result column="price" property="price" jdbcType="VARCHAR" />
-    <result column="brief" property="brief" jdbcType="VARCHAR" />
     <result column="evaluate" property="evaluate" jdbcType="VARCHAR" />
     <result column="like_num" property="like_num" jdbcType="INTEGER" />
     <result column="create_time" property="create_time" jdbcType="TIMESTAMP" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.yjl.entity.Product" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.yjl.entity.ProductWithBLOBs" extends="BaseResultMap" >
+    <result column="brief" property="brief" jdbcType="LONGVARBINARY" />
     <result column="pic" property="pic" jdbcType="LONGVARBINARY" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -73,10 +73,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, category, price, brief, evaluate, like_num, create_time
+    id, name, category, price, evaluate, like_num, create_time
   </sql>
   <sql id="Blob_Column_List" >
-    pic
+    brief, pic
   </sql>
   <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.yjl.entity.ProductExample" >
     select
@@ -131,17 +131,17 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.yjl.entity.Product" >
+  <insert id="insert" parameterType="com.yjl.entity.ProductWithBLOBs" >
     insert into product (id, name, category, 
-      price, brief, evaluate, 
-      like_num, create_time, pic
+      price, evaluate, like_num, 
+      create_time, brief, pic
       )
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{category,jdbcType=VARCHAR}, 
-      #{price,jdbcType=VARCHAR}, #{brief,jdbcType=VARCHAR}, #{evaluate,jdbcType=VARCHAR}, 
-      #{like_num,jdbcType=INTEGER}, #{create_time,jdbcType=TIMESTAMP}, #{pic,jdbcType=LONGVARBINARY}
+      #{price,jdbcType=VARCHAR}, #{evaluate,jdbcType=VARCHAR}, #{like_num,jdbcType=INTEGER}, 
+      #{create_time,jdbcType=TIMESTAMP}, #{brief,jdbcType=LONGVARBINARY}, #{pic,jdbcType=LONGVARBINARY}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.yjl.entity.Product" >
+  <insert id="insertSelective" parameterType="com.yjl.entity.ProductWithBLOBs" >
     insert into product
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -156,9 +156,6 @@
       <if test="price != null" >
         price,
       </if>
-      <if test="brief != null" >
-        brief,
-      </if>
       <if test="evaluate != null" >
         evaluate,
       </if>
@@ -167,6 +164,9 @@
       </if>
       <if test="create_time != null" >
         create_time,
+      </if>
+      <if test="brief != null" >
+        brief,
       </if>
       <if test="pic != null" >
         pic,
@@ -185,9 +185,6 @@
       <if test="price != null" >
         #{price,jdbcType=VARCHAR},
       </if>
-      <if test="brief != null" >
-        #{brief,jdbcType=VARCHAR},
-      </if>
       <if test="evaluate != null" >
         #{evaluate,jdbcType=VARCHAR},
       </if>
@@ -196,6 +193,9 @@
       </if>
       <if test="create_time != null" >
         #{create_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="brief != null" >
+        #{brief,jdbcType=LONGVARBINARY},
       </if>
       <if test="pic != null" >
         #{pic,jdbcType=LONGVARBINARY},
@@ -223,9 +223,6 @@
       <if test="record.price != null" >
         price = #{record.price,jdbcType=VARCHAR},
       </if>
-      <if test="record.brief != null" >
-        brief = #{record.brief,jdbcType=VARCHAR},
-      </if>
       <if test="record.evaluate != null" >
         evaluate = #{record.evaluate,jdbcType=VARCHAR},
       </if>
@@ -234,6 +231,9 @@
       </if>
       <if test="record.create_time != null" >
         create_time = #{record.create_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.brief != null" >
+        brief = #{record.brief,jdbcType=LONGVARBINARY},
       </if>
       <if test="record.pic != null" >
         pic = #{record.pic,jdbcType=LONGVARBINARY},
@@ -249,10 +249,10 @@
       name = #{record.name,jdbcType=VARCHAR},
       category = #{record.category,jdbcType=VARCHAR},
       price = #{record.price,jdbcType=VARCHAR},
-      brief = #{record.brief,jdbcType=VARCHAR},
       evaluate = #{record.evaluate,jdbcType=VARCHAR},
       like_num = #{record.like_num,jdbcType=INTEGER},
       create_time = #{record.create_time,jdbcType=TIMESTAMP},
+      brief = #{record.brief,jdbcType=LONGVARBINARY},
       pic = #{record.pic,jdbcType=LONGVARBINARY}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -264,7 +264,6 @@
       name = #{record.name,jdbcType=VARCHAR},
       category = #{record.category,jdbcType=VARCHAR},
       price = #{record.price,jdbcType=VARCHAR},
-      brief = #{record.brief,jdbcType=VARCHAR},
       evaluate = #{record.evaluate,jdbcType=VARCHAR},
       like_num = #{record.like_num,jdbcType=INTEGER},
       create_time = #{record.create_time,jdbcType=TIMESTAMP}
@@ -272,7 +271,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yjl.entity.Product" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.yjl.entity.ProductWithBLOBs" >
     update product
     <set >
       <if test="name != null" >
@@ -284,9 +283,6 @@
       <if test="price != null" >
         price = #{price,jdbcType=VARCHAR},
       </if>
-      <if test="brief != null" >
-        brief = #{brief,jdbcType=VARCHAR},
-      </if>
       <if test="evaluate != null" >
         evaluate = #{evaluate,jdbcType=VARCHAR},
       </if>
@@ -296,21 +292,24 @@
       <if test="create_time != null" >
         create_time = #{create_time,jdbcType=TIMESTAMP},
       </if>
+      <if test="brief != null" >
+        brief = #{brief,jdbcType=LONGVARBINARY},
+      </if>
       <if test="pic != null" >
         pic = #{pic,jdbcType=LONGVARBINARY},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yjl.entity.Product" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yjl.entity.ProductWithBLOBs" >
     update product
     set name = #{name,jdbcType=VARCHAR},
       category = #{category,jdbcType=VARCHAR},
       price = #{price,jdbcType=VARCHAR},
-      brief = #{brief,jdbcType=VARCHAR},
       evaluate = #{evaluate,jdbcType=VARCHAR},
       like_num = #{like_num,jdbcType=INTEGER},
       create_time = #{create_time,jdbcType=TIMESTAMP},
+      brief = #{brief,jdbcType=LONGVARBINARY},
       pic = #{pic,jdbcType=LONGVARBINARY}
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -319,7 +318,6 @@
     set name = #{name,jdbcType=VARCHAR},
       category = #{category,jdbcType=VARCHAR},
       price = #{price,jdbcType=VARCHAR},
-      brief = #{brief,jdbcType=VARCHAR},
       evaluate = #{evaluate,jdbcType=VARCHAR},
       like_num = #{like_num,jdbcType=INTEGER},
       create_time = #{create_time,jdbcType=TIMESTAMP}
