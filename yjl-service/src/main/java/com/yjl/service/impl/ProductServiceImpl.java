@@ -3,6 +3,7 @@ package com.yjl.service.impl;
 import com.yjl.common.util.Page;
 import com.yjl.entity.Product;
 import com.yjl.entity.ProductExample;
+import com.yjl.entity.ProductWithBLOBs;
 import com.yjl.mapper.ProductMapper;
 import com.yjl.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,23 @@ public class ProductServiceImpl implements ProductService {
         criteria.andCategoryEqualTo(id);
         productMapper.selectByExample(productExample);
         return null;
+    }
+
+    @Override
+    public List<Product> getProductList() {
+        return productMapper.selectByExample(new ProductExample());
+    }
+
+    @Override
+    public ProductWithBLOBs getProductWithBLOBsById(Long id) {
+        ProductExample productExample = new ProductExample();
+        ProductExample.Criteria criteria = productExample.createCriteria();
+        criteria.andIdEqualTo(id);
+        return Optional.ofNullable(productMapper.selectByExampleWithBLOBs(productExample)).get().get(0);
+    }
+
+    public int updateProductWithBLOBsById(ProductWithBLOBs productWithBLOBs) {
+        return productMapper.updateByPrimaryKeySelective(productWithBLOBs);
     }
 
     @Override

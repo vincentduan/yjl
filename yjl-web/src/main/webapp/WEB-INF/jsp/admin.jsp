@@ -21,82 +21,74 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">壹佳陆</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">展品管理 <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">文章管理</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="<%=basePath%>index/index">返回网站</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">账户信息 <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
+    <jsp:include page="common/admin-header.jsp"/>
 </header>
 
 <div class="container">
     <div class="col-md-12">
-        <table data-toggle="table">
-            <thead>
-            <tr>
-                <th>展品名称</th>
-                <th>分类</th>
-                <th>上架时间</th>
-                <th>拍卖价格</th>
-                <th>简介</th>
-                <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr><td>name</td><td>1</td><td>2017</td><td>100</td><td>asdfsdf</td><td>修改，删除</td></tr>
-            </tbody>
+        <table class="product-table">
+
         </table>
 
     </div>
 
 </div>
-
+<script type="text/javascript">
+    $(function () {
+        initTable();
+    });
+    function initTable() {
+        var url = "http://localhost:8080/yjl/admin/getProductList";
+        $(".product-table").bootstrapTable({
+            method:'GET',
+            dataType:'json',
+            striped:true,
+            url:url,
+            pagination:true,
+            paginationVAlign:"top",
+            columns:[
+                {
+                    field : 'name',
+                    title : '展品名称',
+                    align : 'center',
+                    valign : 'middle'
+                },{
+                    field : 'category',
+                    title : '分类',
+                    align : 'center',
+                    valign : 'middle'
+                },{
+                    field : 'create_time',
+                    title : '上架时间',
+                    align : 'center',
+                    valign : 'middle',
+                    formatter:function(value,row,index){
+                        return new Date(parseInt(value)).toLocaleString().replace(/:\d{1,2}$/,' ');
+                    }
+                },{
+                    field : 'price',
+                    title : '拍卖价格',
+                    align : 'center',
+                    valign : 'middle'
+                },{
+                    field : 'evaluate',
+                    title : '评价',
+                    align : 'center',
+                    valign : 'middle'
+                },{
+                    field : 'id',
+                    title : '操作',
+                    align : 'center',
+                    valign : 'middle',
+                    formatter:function(value,row,index){
+                        var edit = "<a href='http://localhost:8080/yjl/admin/edit/"+value+"'>编辑</a>  ";
+                        var del = "<a href='http://localhost:8080/yjl/admin/del/"+value+"'>删除</a>";
+                        return edit+del;
+                    }
+            }
+            ]
+        })
+    }
+</script>
 </body>
 </html>
