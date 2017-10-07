@@ -45,6 +45,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public int saveProductWithBLOBs(ProductWithBLOBs productWithBLOBs) {
+        return productMapper.insertSelective(productWithBLOBs);
+    }
+
+    @Override
     public Product findById(Long id) {
         return null;
     }

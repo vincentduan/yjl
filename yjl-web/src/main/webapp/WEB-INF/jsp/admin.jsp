@@ -26,10 +26,7 @@
 
 <div class="container">
     <div class="col-md-12">
-        <table class="product-table">
-
-        </table>
-
+        <table class="product-table"></table>
     </div>
 
 </div>

@@ -79,7 +79,7 @@
 								<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
 								<h5><a href="#">${product.name}</a></h5>
 								<span><i class="fa fa-calendar"></i> <fmt:formatDate value="${product.create_time}" pattern="yyyy/MM/dd  HH:mm:ss" /> </span><br>
-								<p>评价:${product.evaluate}</p>
+								<p style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;"><i class="fa fa-comment-o"> : </i>${product.evaluate}</p>
 							</div>
 						</c:forEach>
 					</div>

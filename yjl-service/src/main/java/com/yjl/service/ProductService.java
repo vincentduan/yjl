@@ -14,4 +14,6 @@ public interface ProductService extends BaseService<Product> {
     ProductWithBLOBs getProductWithBLOBsById(Long id);
 
     int updateProductWithBLOBsById(ProductWithBLOBs productWithBLOBs);
+
+    int saveProductWithBLOBs(ProductWithBLOBs productWithBLOBs);
 }
