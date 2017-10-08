@@ -2,8 +2,9 @@ package com.yjl.mapper;
 
 import com.yjl.entity.Artical;
 import com.yjl.entity.ArticalExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface ArticalMapper {
     int countByExample(ArticalExample example);

@@ -34,18 +34,19 @@
                     <div class="dropdown-menu" style="margin-left: -203.625px;">
                         <div class="dropdown-inner">
                             <ul class="list-unstyled">
-                                <li><a href="<%=basePath%>exhibition/index?category=2">玉器</a></li>
-                                <li><a href="<%=basePath%>exhibition/index?category=3">瓷器</a></li>
-                                <li><a href="<%=basePath%>exhibition/index?category=4">书画</a></li>
+                                <li><a href="<%=basePath%>exhibition/index?category=3">玉器</a></li>
+                                <li><a href="<%=basePath%>exhibition/index?category=4">瓷器</a></li>
+                                <li><a href="<%=basePath%>exhibition/index?category=5">书画</a></li>
                                 <li><a href="<%=basePath%>exhibition/index?category=1">紫砂</a></li>
                             </ul>
                             <ul class="list-unstyled">
-                                <li><a href="<%=basePath%>exhibition/index?category=5">宝石</a></li>
-                                <li><a href="<%=basePath%>exhibition/index?category=6">奇石</a></li>
-                                <li><a href="<%=basePath%>exhibition/index?category=7">文玩</a></li>
+                                <li><a href="<%=basePath%>exhibition/index?category=2">字画</a></li>
+                                <li><a href="<%=basePath%>exhibition/index?category=6">宝石</a></li>
+                                <li><a href="<%=basePath%>exhibition/index?category=7">奇石</a></li>
+                                <li><a href="<%=basePath%>exhibition/index?category=8">文玩</a></li>
                             </ul>
                             <ul class="list-unstyled">
-                                <li><a href="<%=basePath%>exhibition/index?category=8">其他</a></li>
+                                <li><a href="<%=basePath%>exhibition/index?category=9">其他</a></li>
                             </ul>
                         </div>
                     </div>

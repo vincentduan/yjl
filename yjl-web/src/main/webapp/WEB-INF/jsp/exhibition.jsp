@@ -76,7 +76,7 @@
 					<div class="row">
 						<c:forEach items="${product_list}" var="product" varStatus="vs">
 							<div class="col-md-3">
-								<img src="<%=basePath%>resources/images/photo_600_400_06.jpg" />
+								<img src="<%=basePath%>resources/upload/${product.pic}" height="200" width="200" />
 								<h5><a href="#">${product.name}</a></h5>
 								<span><i class="fa fa-calendar"></i> <fmt:formatDate value="${product.create_time}" pattern="yyyy/MM/dd  HH:mm:ss" /> </span><br>
 								<p style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;"><i class="fa fa-comment-o"> : </i>${product.evaluate}</p>

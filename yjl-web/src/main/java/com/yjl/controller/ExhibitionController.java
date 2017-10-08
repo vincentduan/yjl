@@ -2,7 +2,6 @@ package com.yjl.controller;
 
 import com.yjl.common.util.Page;
 import com.yjl.entity.Product;
-import com.yjl.entity.ProductWithBLOBs;
 import com.yjl.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -2,7 +2,7 @@ package com.yjl.service;
 
 import com.yjl.common.base.BaseService;
 import com.yjl.entity.Product;
-import com.yjl.entity.ProductWithBLOBs;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import java.util.List;
 
@@ -11,9 +11,13 @@ public interface ProductService extends BaseService<Product> {
 
     List<Product> getProductList();
 
-    ProductWithBLOBs getProductWithBLOBsById(Long id);
+    Product queryByCondition(Product product);
 
-    int updateProductWithBLOBsById(ProductWithBLOBs productWithBLOBs);
+    String uploadCover(CommonsMultipartFile cover, String realPath);
 
-    int saveProductWithBLOBs(ProductWithBLOBs productWithBLOBs);
+    int removeCover(String oldPic);
+
+    /*int updateProductWithBLOBsById(ProductWithBLOBs productWithBLOBs);
+
+    int saveProductWithBLOBs(ProductWithBLOBs productWithBLOBs);*/
 }

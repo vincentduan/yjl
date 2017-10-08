@@ -475,53 +475,273 @@ public class ProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andLike_numEqualTo(Integer value) {
+        public Criteria andLike_numEqualTo(String value) {
             addCriterion("like_num =", value, "like_num");
             return (Criteria) this;
         }
 
-        public Criteria andLike_numNotEqualTo(Integer value) {
+        public Criteria andLike_numNotEqualTo(String value) {
             addCriterion("like_num <>", value, "like_num");
             return (Criteria) this;
         }
 
-        public Criteria andLike_numGreaterThan(Integer value) {
+        public Criteria andLike_numGreaterThan(String value) {
             addCriterion("like_num >", value, "like_num");
             return (Criteria) this;
         }
 
-        public Criteria andLike_numGreaterThanOrEqualTo(Integer value) {
+        public Criteria andLike_numGreaterThanOrEqualTo(String value) {
             addCriterion("like_num >=", value, "like_num");
             return (Criteria) this;
         }
 
-        public Criteria andLike_numLessThan(Integer value) {
+        public Criteria andLike_numLessThan(String value) {
             addCriterion("like_num <", value, "like_num");
             return (Criteria) this;
         }
 
-        public Criteria andLike_numLessThanOrEqualTo(Integer value) {
+        public Criteria andLike_numLessThanOrEqualTo(String value) {
             addCriterion("like_num <=", value, "like_num");
             return (Criteria) this;
         }
 
-        public Criteria andLike_numIn(List<Integer> values) {
+        public Criteria andLike_numLike(String value) {
+            addCriterion("like_num like", value, "like_num");
+            return (Criteria) this;
+        }
+
+        public Criteria andLike_numNotLike(String value) {
+            addCriterion("like_num not like", value, "like_num");
+            return (Criteria) this;
+        }
+
+        public Criteria andLike_numIn(List<String> values) {
             addCriterion("like_num in", values, "like_num");
             return (Criteria) this;
         }
 
-        public Criteria andLike_numNotIn(List<Integer> values) {
+        public Criteria andLike_numNotIn(List<String> values) {
             addCriterion("like_num not in", values, "like_num");
             return (Criteria) this;
         }
 
-        public Criteria andLike_numBetween(Integer value1, Integer value2) {
+        public Criteria andLike_numBetween(String value1, String value2) {
             addCriterion("like_num between", value1, value2, "like_num");
             return (Criteria) this;
         }
 
-        public Criteria andLike_numNotBetween(Integer value1, Integer value2) {
+        public Criteria andLike_numNotBetween(String value1, String value2) {
             addCriterion("like_num not between", value1, value2, "like_num");
+            return (Criteria) this;
+        }
+
+        public Criteria andPicIsNull() {
+            addCriterion("pic is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPicIsNotNull() {
+            addCriterion("pic is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPicEqualTo(String value) {
+            addCriterion("pic =", value, "pic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPicNotEqualTo(String value) {
+            addCriterion("pic <>", value, "pic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPicGreaterThan(String value) {
+            addCriterion("pic >", value, "pic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPicGreaterThanOrEqualTo(String value) {
+            addCriterion("pic >=", value, "pic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPicLessThan(String value) {
+            addCriterion("pic <", value, "pic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPicLessThanOrEqualTo(String value) {
+            addCriterion("pic <=", value, "pic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPicLike(String value) {
+            addCriterion("pic like", value, "pic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPicNotLike(String value) {
+            addCriterion("pic not like", value, "pic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPicIn(List<String> values) {
+            addCriterion("pic in", values, "pic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPicNotIn(List<String> values) {
+            addCriterion("pic not in", values, "pic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPicBetween(String value1, String value2) {
+            addCriterion("pic between", value1, value2, "pic");
+            return (Criteria) this;
+        }
+
+        public Criteria andPicNotBetween(String value1, String value2) {
+            addCriterion("pic not between", value1, value2, "pic");
+            return (Criteria) this;
+        }
+
+        public Criteria andField1IsNull() {
+            addCriterion("field1 is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andField1IsNotNull() {
+            addCriterion("field1 is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andField1EqualTo(String value) {
+            addCriterion("field1 =", value, "field1");
+            return (Criteria) this;
+        }
+
+        public Criteria andField1NotEqualTo(String value) {
+            addCriterion("field1 <>", value, "field1");
+            return (Criteria) this;
+        }
+
+        public Criteria andField1GreaterThan(String value) {
+            addCriterion("field1 >", value, "field1");
+            return (Criteria) this;
+        }
+
+        public Criteria andField1GreaterThanOrEqualTo(String value) {
+            addCriterion("field1 >=", value, "field1");
+            return (Criteria) this;
+        }
+
+        public Criteria andField1LessThan(String value) {
+            addCriterion("field1 <", value, "field1");
+            return (Criteria) this;
+        }
+
+        public Criteria andField1LessThanOrEqualTo(String value) {
+            addCriterion("field1 <=", value, "field1");
+            return (Criteria) this;
+        }
+
+        public Criteria andField1Like(String value) {
+            addCriterion("field1 like", value, "field1");
+            return (Criteria) this;
+        }
+
+        public Criteria andField1NotLike(String value) {
+            addCriterion("field1 not like", value, "field1");
+            return (Criteria) this;
+        }
+
+        public Criteria andField1In(List<String> values) {
+            addCriterion("field1 in", values, "field1");
+            return (Criteria) this;
+        }
+
+        public Criteria andField1NotIn(List<String> values) {
+            addCriterion("field1 not in", values, "field1");
+            return (Criteria) this;
+        }
+
+        public Criteria andField1Between(String value1, String value2) {
+            addCriterion("field1 between", value1, value2, "field1");
+            return (Criteria) this;
+        }
+
+        public Criteria andField1NotBetween(String value1, String value2) {
+            addCriterion("field1 not between", value1, value2, "field1");
+            return (Criteria) this;
+        }
+
+        public Criteria andField2IsNull() {
+            addCriterion("field2 is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andField2IsNotNull() {
+            addCriterion("field2 is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andField2EqualTo(String value) {
+            addCriterion("field2 =", value, "field2");
+            return (Criteria) this;
+        }
+
+        public Criteria andField2NotEqualTo(String value) {
+            addCriterion("field2 <>", value, "field2");
+            return (Criteria) this;
+        }
+
+        public Criteria andField2GreaterThan(String value) {
+            addCriterion("field2 >", value, "field2");
+            return (Criteria) this;
+        }
+
+        public Criteria andField2GreaterThanOrEqualTo(String value) {
+            addCriterion("field2 >=", value, "field2");
+            return (Criteria) this;
+        }
+
+        public Criteria andField2LessThan(String value) {
+            addCriterion("field2 <", value, "field2");
+            return (Criteria) this;
+        }
+
+        public Criteria andField2LessThanOrEqualTo(String value) {
+            addCriterion("field2 <=", value, "field2");
+            return (Criteria) this;
+        }
+
+        public Criteria andField2Like(String value) {
+            addCriterion("field2 like", value, "field2");
+            return (Criteria) this;
+        }
+
+        public Criteria andField2NotLike(String value) {
+            addCriterion("field2 not like", value, "field2");
+            return (Criteria) this;
+        }
+
+        public Criteria andField2In(List<String> values) {
+            addCriterion("field2 in", values, "field2");
+            return (Criteria) this;
+        }
+
+        public Criteria andField2NotIn(List<String> values) {
+            addCriterion("field2 not in", values, "field2");
+            return (Criteria) this;
+        }
+
+        public Criteria andField2Between(String value1, String value2) {
+            addCriterion("field2 between", value1, value2, "field2");
+            return (Criteria) this;
+        }
+
+        public Criteria andField2NotBetween(String value1, String value2) {
+            addCriterion("field2 not between", value1, value2, "field2");
             return (Criteria) this;
         }
 

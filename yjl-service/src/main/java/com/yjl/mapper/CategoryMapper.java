@@ -2,8 +2,9 @@ package com.yjl.mapper;
 
 import com.yjl.entity.Category;
 import com.yjl.entity.CategoryExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface CategoryMapper {
     int countByExample(CategoryExample example);

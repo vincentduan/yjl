@@ -1,6 +1,5 @@
 import com.yjl.common.util.Page;
 import com.yjl.entity.Product;
-import com.yjl.entity.ProductWithBLOBs;
 import com.yjl.service.ProductService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = "classpath:spring/*.xml")
 public class ProductServiceTest {
 
-    @Autowired
+    /*@Autowired
     ProductService productService;
 
     @Test
@@ -47,5 +46,5 @@ public class ProductServiceTest {
         ProductWithBLOBs productWithBLOBsById = productService.getProductWithBLOBsById(2L);
         System.out.println(new String(productWithBLOBsById.getBrief()));
     }
-
+*/
 }
