@@ -14,97 +14,71 @@
 	<jsp:include page="common/import.jsp" />
 </head>
 <body>
-<%--<header>
-	<!--start Navigation-->
-	<div class="container">
-		<h2>
-			北京壹佳陆拍卖有限公司&nbsp;<img src="<%=basePath%>resources/images/logo1.png" width="70px" />
-		</h2>
-	</div>
-	
-	<nav id="menu" class="navbar container" style="background-color:#3d626e;">
-		<div class="navbar-header">
-			<button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
-			<a class="navbar-brand" style="background-color:#324f43;" href="#">
-				<div class="logo"><span>壹佳陆</span></div>
-			</a>
-		</div>
-		<div class="collapse navbar-collapse navbar-ex1-collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="index.jsp">首页</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">在线展示<i class="fa fa-arrow-circle-o-down"></i></a>
-					<div class="dropdown-menu" style="margin-left: -203.625px;">
-						<div class="dropdown-inner">
-							<ul class="list-unstyled">
-								<li><a href="exhibition.jsp?category=0">玉器</a></li>
-								<li><a href="exhibition.jsp?category=1">瓷器</a></li>
-								<li><a href="exhibition.jsp?category=2">书画</a></li>
-								<li><a href="exhibition.jsp?category=3">紫砂</a></li>
-							</ul>
-							<ul class="list-unstyled">
-								<li><a href="exhibition.jsp?category=4">宝石</a></li>
-								<li><a href="exhibition.jsp?category=5">奇石</a></li>
-								<li><a href="exhibition.jsp?category=6">文玩</a></li>
-							</ul>
-							<ul class="list-unstyled">
-								<li><a href="exhibition.jsp?category=7">其他</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li class="dropdown"><a href="collection.jsp">收藏知识</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">关于我们 <i class="fa fa-arrow-circle-o-down"></i></a>
-					<div class="dropdown-menu">
-						<div class="dropdown-inner">
-							<ul class="list-unstyled">
-								<li><a href="profile.jsp">企业简介</a></li>
-							</ul>
-						</div> 
-					</div>
-				</li>
-			</ul>
-		</div>
-	</nav>
-	<!--end Navigation-->
-</header>--%>
 <jsp:include page="common/header.jsp"/>
-<div id="page-content" class="archive-page container">
-	<div class="">
-		<div class="row">
-			<div id="main-content" class="col-md-12">
-				<div class="box">
-					<div class="row">
-						<c:forEach items="${product_list}" var="product" varStatus="vs">
-							<div class="col-md-3">
-								<img src="<%=basePath%>resources/upload/${product.pic}" height="200" width="200" />
-								<h5><a href="<%=basePath%>exhibition/detail/${product.id}">${product.name}</a></h5>
-								<span><i class="fa fa-calendar"></i> <fmt:formatDate value="${product.create_time}" pattern="yyyy/MM/dd  HH:mm:ss" /> </span><br>
-								<p style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;"><i class="fa fa-comment-o"> : </i>${product.evaluate}</p>
-							</div>
-						</c:forEach>
-					</div>
+<div id="page-content" class="single-page container">
+	<div class="row">
+		<div id="main-content" class="col-md-12">
+			<div class="box">
+				<div class="wrap-vid">
+                    <div style="text-align:center"><img src="<%=basePath%>resources/upload/${product.pic}"></div>
 				</div>
-				<hr class="line">
-				<div class="box">
-					<center>
-					<ul class="pagination">
-						<li>
-						  <a href="#" id="page-before" aria-label="Previous">
-							<span aria-hidden="true">上一页</span>
-						  </a>
-						</li>
-						<c:if test="${productPage.pageNo - 2 > 0}"><li><a href="#">${productPage.pageNo - 2}</a></li></c:if>
-						<c:if test="${productPage.pageNo - 1 > 0}"><li><a href="#">${productPage.pageNo - 1}</a></li></c:if>
-						<li><a href="#">当前页${productPage.pageNo}</a></li>
-						<c:if test="${productPage.totalCount/8 - productPage.pageNo > 0}"><li><a href="#">${productPage.pageNo +1 }</a></li></c:if>
-						<c:if test="${productPage.totalCount/8 - productPage.pageNo-1 > 0}"><li><a href="#">${productPage.pageNo +2 }</a></li></c:if>
-						<li>
-						  <a href="#" id="page-next" aria-label="Next">
-							<span aria-hidden="true">下一页</span>
-						  </a>
-						</li>
-					</ul>
-				</center>
+                <br>
+				<div class="line"></div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3" >
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">名称</label>
+                                <div class="col-md-10">
+                                    <p class="form-control-static">${product.name}</p>
+                                </div>
+                                <label class="col-md-2 control-label">价格</label>
+                                <div class="col-md-10">
+                                    <p class="form-control-static">${product.price}</p>
+                                </div>
+                                <label class="col-md-2 control-label">评价</label>
+                                <div class="col-md-10">
+                                    <p class="form-control-static">${product.evaluate}</p>
+                                </div>
+                                <label class="col-md-2 control-label">上架时间</label>
+                                <div class="col-md-10">
+                                    <p class="form-control-static"><fmt:formatDate value="${product.create_time}" pattern="yyyy/MM/dd  HH:mm:ss" /></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                ${brief}
+				<div class="vid-tags">
+					<a href="#">${category}</a>
+				</div>
+				<div class="line"></div>
+				<div class="comment">
+					<h3>留下联系方式</h3>
+					<form name="form1" method="post" action="">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" class="form-control input-lg" name="name" id="name" placeholder="姓名" required="required" />
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="email" class="form-control input-lg" name="email" id="email" placeholder="电子邮件" required="required" />
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+													<textarea name="message" id="message" class="form-control" rows="4" cols="25" required="required"
+															  placeholder="Message"></textarea>
+								</div>
+								<button type="submit" class="btn btn-4 btn-block" name="btnBooking" id="btnBbooking">
+									Book Now</button>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
