@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = "classpath:spring/*.xml")
 public class ProductServiceTest {
 
-    /*@Autowired
+    @Autowired
     ProductService productService;
 
     @Test
@@ -27,24 +27,13 @@ public class ProductServiceTest {
 
     @Test
     public void updateProductWithBLobs(){
-        String name = "2222";
-        String category = "1";
-        String evaluate = "evvvvv";
-        String brief = "<p>dfsdfsdfsdf<p>";
-        ProductWithBLOBs productWithBLOBs = new ProductWithBLOBs();
-        productWithBLOBs.setId(2L);
-        productWithBLOBs.setName(name);
-        productWithBLOBs.setCategory(category);
-        productWithBLOBs.setEvaluate(evaluate);
-        productWithBLOBs.setBrief(brief.getBytes());
-        int status = productService.updateProductWithBLOBsById(productWithBLOBs);
-        System.out.println(status);
+
+        System.out.println("");
     }
 
     @Test
     public void selectProductWithBlob(){
-        ProductWithBLOBs productWithBLOBsById = productService.getProductWithBLOBsById(2L);
-        System.out.println(new String(productWithBLOBsById.getBrief()));
+
+        System.out.println("");
     }
-*/
 }

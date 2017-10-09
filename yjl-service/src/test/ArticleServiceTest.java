@@ -10,12 +10,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = "classpath:spring/*.xml")
 public class ArticleServiceTest {
 
-   /* @Autowired
+    @Autowired
     ArticalService articalService;
 
     @Test
     public void testArticalService(){
-        Artical artical = articalService.getById(1L);
-        System.out.println(artical.getContent());
-    }*/
+        System.out.println("test articalService");
+    }
 }
