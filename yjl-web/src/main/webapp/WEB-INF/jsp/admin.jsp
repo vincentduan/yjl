@@ -35,7 +35,7 @@
         initTable();
     });
     function initTable() {
-        var url = "http://localhost:8080/yjl/admin/getProductList";
+        var url = "<%=basePath%>admin/getProductList";
         $(".product-table").bootstrapTable({
             method:'GET',
             dataType:'json',
@@ -78,8 +78,8 @@
                     align : 'center',
                     valign : 'middle',
                     formatter:function(value,row,index){
-                        var edit = "<a href='http://localhost:8080/yjl/admin/edit/"+value+"'>编辑</a>  ";
-                        var del = "<a href='http://localhost:8080/yjl/admin/del/"+value+"'>删除</a>";
+                        var edit = "<a href='<%=basePath%>admin/edit/"+value+"'>编辑</a>  ";
+                        var del = "<a href='<%=basePath%>admin/del/"+value+"'>删除</a>";
                         return edit+del;
                     }
             }

@@ -166,16 +166,7 @@
 		minView: 2,
 		forceParse: 0
     });
-	
 
-(function(){
-	urlinfo=window.location.href;
-	console.log("category=" + urlinfo.split("category=")[1]);
-	//var category = urlinfo.split("category=")[1];
-	//var product_page = ${product_list};
-	//exhibition(product_page);
-	page(${category}, ${productPage.totalCount}, ${productPage.pageNo}, ${productPage.pageSize}, ${nextPage}, ${prePage});
-})();
 </script>
 </body>
 </html>

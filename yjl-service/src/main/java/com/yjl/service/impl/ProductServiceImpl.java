@@ -108,7 +108,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public int deleteById(Long id) {
-        return 0;
+        return productMapper.deleteByPrimaryKey(id);
     }
 
     @Override

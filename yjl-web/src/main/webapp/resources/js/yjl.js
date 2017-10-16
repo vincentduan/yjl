@@ -18,8 +18,3 @@ function exhibition(product_page){
 		}
 	})
 }
-
-function page(category, totalCount, pageNo, pageSize, nextPage, prePage){
-	$("#page-before").attr("href", "http://localhost:8080/yjl/exhibition/index?pageNo="+prePage+"&pageSize="+pageSize+"&category="+category);
-	$("#page-next").attr("href", "http://localhost:8080/yjl/exhibition/index?pageNo="+nextPage+"&pageSize="+pageSize+"&category="+category);
-}

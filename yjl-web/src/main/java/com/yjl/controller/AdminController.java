@@ -1,5 +1,6 @@
 package com.yjl.controller;
 
+import com.yjl.common.util.Page;
 import com.yjl.entity.Product;
 import com.yjl.service.ProductService;
 import org.joda.time.DateTime;
@@ -25,28 +26,32 @@ public class AdminController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "getProductList")
-    public List<Product> getProductList(){
+    @RequestMapping(value = "getProductList", method = {RequestMethod.GET,RequestMethod.POST})
+    public List<Product> getProductList(@RequestParam("offset") int pageNo, @RequestParam("limit") int pageSize, @RequestParam("order") String order) {
+//        Page<Product> productPage = new Page<>();
+//        productPage.setPageSize(pageSize);
+//        productPage.setPageNo(pageNo);
+//        productService.queryByPage(productPage, new Product());
         List<Product> productList = productService.getProductList();
         return productList;
     }
 
     @RequestMapping(value = "edit/{id}", method = RequestMethod.GET)
-    public String formEdit(@PathVariable Long id, ModelMap modelMap){
+    public String formEdit(@PathVariable Long id, ModelMap modelMap) {
         Product p = new Product();
         p.setId(id);
         Product product = productService.queryByCondition(p);
         modelMap.addAttribute("productWithBLOBs", product);
-        modelMap.addAttribute("brief",new String(product.getBrief()));
+        modelMap.addAttribute("brief", new String(product.getBrief()));
         return "admin-edit";
     }
 
     @RequestMapping(value = "edit/{id}", method = RequestMethod.POST)
-    public String edit(@PathVariable Long id, HttpServletRequest request, @RequestParam("cover") CommonsMultipartFile cover){
-        String realPath=request.getSession().getServletContext().getRealPath("/resources/upload/");
+    public String edit(@PathVariable Long id, HttpServletRequest request, @RequestParam("cover") CommonsMultipartFile cover) {
+        String realPath = request.getSession().getServletContext().getRealPath("/resources/upload/");
         String oldPic = productService.findById(id).getPic();
-        if(!"default.jpg".equals(oldPic)){
-            int status = productService.removeCover(realPath+"/"+oldPic);
+        if (!"default.jpg".equals(oldPic)) {
+            int status = productService.removeCover(realPath + "/" + oldPic);
             System.out.println(status);
         }
         String name = request.getParameter("name");
@@ -62,9 +67,9 @@ public class AdminController {
         p.setEvaluate(evaluate);
         p.setBrief(brief.getBytes());
         //上传封面
-        if(!cover.isEmpty()){
+        if (!cover.isEmpty()) {
             System.out.println(realPath);
-            String picPath = productService.uploadCover(cover,realPath);
+            String picPath = productService.uploadCover(cover, realPath);
             p.setPic(picPath);
         }
         int status = productService.update(p);
@@ -73,12 +78,12 @@ public class AdminController {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
-    public String formAdd(){
+    public String formAdd() {
         return "admin-add";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String add(HttpServletRequest request, @RequestParam("cover") CommonsMultipartFile cover){
+    public String add(HttpServletRequest request, @RequestParam("cover") CommonsMultipartFile cover) {
         String name = request.getParameter("name");
         String category = request.getParameter("category");
         String evaluate = request.getParameter("evaluate");
@@ -93,15 +98,14 @@ public class AdminController {
         p.setCreate_time(DateTime.now().toDate());
         //上传封面
         System.out.println(cover.isEmpty());
-        if(!cover.isEmpty()){
-            String realPath=request.getSession().getServletContext().getRealPath("/resources/upload/");
-            String picPath = productService.uploadCover(cover,realPath);
+        if (!cover.isEmpty()) {
+            String realPath = request.getSession().getServletContext().getRealPath("/resources/upload/");
+            String picPath = productService.uploadCover(cover, realPath);
             p.setPic(picPath);
         }
         productService.save(p);
         return "redirect:/admin/index";
     }
-
 
 
 }
