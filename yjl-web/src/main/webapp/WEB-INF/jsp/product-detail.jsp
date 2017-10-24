@@ -55,7 +55,7 @@
 				<div class="line"></div>
 				<div class="comment">
 					<h3>留下联系方式</h3>
-					<form name="form1" method="post" action="">
+					<form name="addOrder" method="post" action="<%=basePath%>order/add">
 						<div class="row">
 							<div class="col-md-3">
 								<div class="form-group">
@@ -84,6 +84,7 @@
 													<textarea name="message" id="message" class="form-control" rows="4" cols="25" required="required"
 															  placeholder="Message"></textarea>
 								</div>
+								<input type="hidden" name="product_id" value="${product.id}">
 								<button type="submit" class="btn btn-4 btn-block" name="btnBooking" id="btnBbooking">
 									Book Now</button>
 							</div>

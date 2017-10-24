@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.yjl.entity.Order" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="product_id" property="product_id" jdbcType="BIGINT" />
-    <result column="telephone" property="telephone" jdbcType="INTEGER" />
+    <result column="telephone" property="telephone" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="message" property="message" jdbcType="VARCHAR" />
@@ -110,7 +110,7 @@
     insert into order_pro (id, product_id, telephone, 
       name, email, message, 
       price, create_time)
-    values (#{id,jdbcType=BIGINT}, #{product_id,jdbcType=BIGINT}, #{telephone,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=BIGINT}, #{product_id,jdbcType=BIGINT}, #{telephone,jdbcType=VARCHAR}, 
       #{name,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{message,jdbcType=VARCHAR}, 
       #{price,jdbcType=INTEGER}, #{create_time,jdbcType=TIMESTAMP})
   </insert>
@@ -150,7 +150,7 @@
         #{product_id,jdbcType=BIGINT},
       </if>
       <if test="telephone != null" >
-        #{telephone,jdbcType=INTEGER},
+        #{telephone,jdbcType=VARCHAR},
       </if>
       <if test="name != null" >
         #{name,jdbcType=VARCHAR},
@@ -185,7 +185,7 @@
         product_id = #{record.product_id,jdbcType=BIGINT},
       </if>
       <if test="record.telephone != null" >
-        telephone = #{record.telephone,jdbcType=INTEGER},
+        telephone = #{record.telephone,jdbcType=VARCHAR},
       </if>
       <if test="record.name != null" >
         name = #{record.name,jdbcType=VARCHAR},
@@ -211,7 +211,7 @@
     update order_pro
     set id = #{record.id,jdbcType=BIGINT},
       product_id = #{record.product_id,jdbcType=BIGINT},
-      telephone = #{record.telephone,jdbcType=INTEGER},
+      telephone = #{record.telephone,jdbcType=VARCHAR},
       name = #{record.name,jdbcType=VARCHAR},
       email = #{record.email,jdbcType=VARCHAR},
       message = #{record.message,jdbcType=VARCHAR},
@@ -228,7 +228,7 @@
         product_id = #{product_id,jdbcType=BIGINT},
       </if>
       <if test="telephone != null" >
-        telephone = #{telephone,jdbcType=INTEGER},
+        telephone = #{telephone,jdbcType=VARCHAR},
       </if>
       <if test="name != null" >
         name = #{name,jdbcType=VARCHAR},
@@ -251,7 +251,7 @@
   <update id="updateByPrimaryKey" parameterType="com.yjl.entity.Order" >
     update order_pro
     set product_id = #{product_id,jdbcType=BIGINT},
-      telephone = #{telephone,jdbcType=INTEGER},
+      telephone = #{telephone,jdbcType=VARCHAR},
       name = #{name,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
       message = #{message,jdbcType=VARCHAR},

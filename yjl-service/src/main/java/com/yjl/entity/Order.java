@@ -7,7 +7,7 @@ public class Order {
 
     private Long product_id;
 
-    private Integer telephone;
+    private String telephone;
 
     private String name;
 
@@ -35,12 +35,12 @@ public class Order {
         this.product_id = product_id;
     }
 
-    public Integer getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(Integer telephone) {
-        this.telephone = telephone;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone == null ? null : telephone.trim();
     }
 
     public String getName() {
