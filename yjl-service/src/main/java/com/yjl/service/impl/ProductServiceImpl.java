@@ -5,7 +5,6 @@ import com.yjl.entity.Product;
 import com.yjl.entity.ProductExample;
 import com.yjl.mapper.ProductMapper;
 import com.yjl.service.ProductService;
-import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
@@ -15,7 +14,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ProductServiceImpl implements ProductService {

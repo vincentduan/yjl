@@ -57,12 +57,22 @@
 					<h3>留下联系方式</h3>
 					<form name="form1" method="post" action="">
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="form-group">
+									<input type="text" class="form-control input-lg" name="telephone" id="telephone" placeholder="手机" required="required" />
+								</div>
+							</div>
+							<div class="col-md-3">
 								<div class="form-group">
 									<input type="text" class="form-control input-lg" name="name" id="name" placeholder="姓名" required="required" />
 								</div>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-3">
+								<div class="form-group">
+									<input type="number" class="form-control input-lg" name="price" id="price" placeholder="价格" required="required" />
+								</div>
+							</div>
+							<div class="col-md-3">
 								<div class="form-group">
 									<input type="email" class="form-control input-lg" name="email" id="email" placeholder="电子邮件" required="required" />
 								</div>

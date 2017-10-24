@@ -1,8 +1,13 @@
 package com.yjl.controller;
 
 import com.yjl.common.util.Page;
+import com.yjl.entity.Category;
+import com.yjl.entity.Order;
 import com.yjl.entity.Product;
+import com.yjl.service.CategoryService;
+import com.yjl.service.OrderService;
 import com.yjl.service.ProductService;
+import com.yjl.vo.OrderVo;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -19,6 +25,10 @@ public class AdminController {
 
     @Autowired
     ProductService productService;
+    @Autowired
+    OrderService orderService;
+    @Autowired
+    CategoryService categoryService;
 
     @RequestMapping("/index")
     public String index(ModelMap model) {
@@ -105,6 +115,23 @@ public class AdminController {
         }
         productService.save(p);
         return "redirect:/admin/index";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "getOrderList")
+    public List<OrderVo> getOrderlist(){
+        List<Order> orderList = orderService.getOrderList();
+        List<OrderVo> orderVos = new ArrayList<>();
+        for(Order order : orderList){
+            OrderVo orderVo = new OrderVo();
+            Product product = productService.findById(order.getProduct_id());
+            Category category = categoryService.findById(Long.parseLong(product.getCategory()));
+            orderVo.setOrder(order);
+            orderVo.setProductName(product.getName());
+            orderVo.setCategory(category.getName());
+            orderVos.add(orderVo);
+        }
+        return orderVos;
     }
 
 

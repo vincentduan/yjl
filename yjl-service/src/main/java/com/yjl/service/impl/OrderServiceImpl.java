@@ -1,13 +1,14 @@
 package com.yjl.service.impl;
 
 import com.yjl.common.util.Page;
-import com.yjl.entity.Category;
 import com.yjl.entity.Order;
 import com.yjl.entity.OrderExample;
 import com.yjl.mapper.OrderMapper;
 import com.yjl.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -41,7 +42,12 @@ public class OrderServiceImpl implements OrderService {
         OrderExample orderExample = new OrderExample();
         OrderExample.Criteria criteria = orderExample.createCriteria();
         page2Example(page, orderExample);
-
+        if(page.isAutoCount()){
+            int total = orderMapper.countByExample(orderExample);
+            page.setTotalCount(total);
+        }
+        List<Order> orderList = orderMapper.selectByExample(orderExample);
+        page.setResult(orderList);
     }
 
     private void page2Example(Page<Order> page, OrderExample orderExample) {
@@ -52,4 +58,8 @@ public class OrderServiceImpl implements OrderService {
     }
 
 
+    @Override
+    public List<Order> getOrderList() {
+        return orderMapper.selectByExample(new OrderExample());
+    }
 }

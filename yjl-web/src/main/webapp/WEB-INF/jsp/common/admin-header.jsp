@@ -27,7 +27,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="<%=basePath%>admin/index">展品列表</a></li>
                         <li><a href="<%=basePath%>admin/add">展品添加</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li><a href="javascript:void(0);" onclick="getOrderList()">拍卖订单</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Separated link</a></li>
                         <li role="separator" class="divider"></li>

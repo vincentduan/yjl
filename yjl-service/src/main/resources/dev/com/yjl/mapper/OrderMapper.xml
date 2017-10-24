@@ -5,9 +5,11 @@
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="product_id" property="product_id" jdbcType="BIGINT" />
     <result column="telephone" property="telephone" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="message" property="message" jdbcType="VARCHAR" />
     <result column="price" property="price" jdbcType="INTEGER" />
+    <result column="create_time" property="create_time" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -68,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, product_id, telephone, email, message, price
+    id, product_id, telephone, name, email, message, price, create_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yjl.entity.OrderExample" >
     select
@@ -106,11 +108,11 @@
   </delete>
   <insert id="insert" parameterType="com.yjl.entity.Order" >
     insert into order_pro (id, product_id, telephone, 
-      email, message, price
-      )
+      name, email, message, 
+      price, create_time)
     values (#{id,jdbcType=BIGINT}, #{product_id,jdbcType=BIGINT}, #{telephone,jdbcType=INTEGER}, 
-      #{email,jdbcType=VARCHAR}, #{message,jdbcType=VARCHAR}, #{price,jdbcType=INTEGER}
-      )
+      #{name,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{message,jdbcType=VARCHAR}, 
+      #{price,jdbcType=INTEGER}, #{create_time,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.yjl.entity.Order" >
     insert into order_pro
@@ -124,6 +126,9 @@
       <if test="telephone != null" >
         telephone,
       </if>
+      <if test="name != null" >
+        name,
+      </if>
       <if test="email != null" >
         email,
       </if>
@@ -132,6 +137,9 @@
       </if>
       <if test="price != null" >
         price,
+      </if>
+      <if test="create_time != null" >
+        create_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -144,6 +152,9 @@
       <if test="telephone != null" >
         #{telephone,jdbcType=INTEGER},
       </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
       <if test="email != null" >
         #{email,jdbcType=VARCHAR},
       </if>
@@ -152,6 +163,9 @@
       </if>
       <if test="price != null" >
         #{price,jdbcType=INTEGER},
+      </if>
+      <if test="create_time != null" >
+        #{create_time,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -173,6 +187,9 @@
       <if test="record.telephone != null" >
         telephone = #{record.telephone,jdbcType=INTEGER},
       </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
       <if test="record.email != null" >
         email = #{record.email,jdbcType=VARCHAR},
       </if>
@@ -181,6 +198,9 @@
       </if>
       <if test="record.price != null" >
         price = #{record.price,jdbcType=INTEGER},
+      </if>
+      <if test="record.create_time != null" >
+        create_time = #{record.create_time,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -192,9 +212,11 @@
     set id = #{record.id,jdbcType=BIGINT},
       product_id = #{record.product_id,jdbcType=BIGINT},
       telephone = #{record.telephone,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
       email = #{record.email,jdbcType=VARCHAR},
       message = #{record.message,jdbcType=VARCHAR},
-      price = #{record.price,jdbcType=INTEGER}
+      price = #{record.price,jdbcType=INTEGER},
+      create_time = #{record.create_time,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -208,6 +230,9 @@
       <if test="telephone != null" >
         telephone = #{telephone,jdbcType=INTEGER},
       </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
       <if test="email != null" >
         email = #{email,jdbcType=VARCHAR},
       </if>
@@ -217,6 +242,9 @@
       <if test="price != null" >
         price = #{price,jdbcType=INTEGER},
       </if>
+      <if test="create_time != null" >
+        create_time = #{create_time,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -224,9 +252,11 @@
     update order_pro
     set product_id = #{product_id,jdbcType=BIGINT},
       telephone = #{telephone,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
       message = #{message,jdbcType=VARCHAR},
-      price = #{price,jdbcType=INTEGER}
+      price = #{price,jdbcType=INTEGER},
+      create_time = #{create_time,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
