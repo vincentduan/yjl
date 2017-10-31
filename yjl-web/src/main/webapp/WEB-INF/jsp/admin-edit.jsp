@@ -79,6 +79,7 @@
         </form>
     </div>
 </div>
+<jsp:include page="common/admin-script.jsp"/>
 <script>
     CKEDITOR.config.height = 500;
     CKEDITOR.config.width = 'auto';

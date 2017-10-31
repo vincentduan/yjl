@@ -623,7 +623,7 @@
 <script type="text/javascript">
 	$(function (){
 		$(".demo1").bootstrapNews({
-			newsPerPage: 5,
+			newsPerPage: 6,
 			autoplay: true,
 			pauseOnHover:true,
 			direction: 'up',
