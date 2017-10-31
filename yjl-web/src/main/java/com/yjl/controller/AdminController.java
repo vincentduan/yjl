@@ -56,6 +56,12 @@ public class AdminController {
         return "admin-edit";
     }
 
+    @RequestMapping(value = "del/{id}", method = RequestMethod.GET)
+    public String del(@PathVariable Long id){
+        productService.deleteById(id);
+        return "redirect:/admin/index";
+    }
+
     @RequestMapping(value = "edit/{id}", method = RequestMethod.POST)
     public String edit(@PathVariable Long id, HttpServletRequest request, @RequestParam("cover") CommonsMultipartFile cover) {
         String realPath = request.getSession().getServletContext().getRealPath("/resources/upload/");
