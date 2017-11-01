@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -16,74 +18,6 @@
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<!-- <div class="page-header">
-				<h1>
-					<small>北京</small>壹佳陆<small>拍卖有限公司</small>
-				</h1>
-			</div> -->
-			<!-- <nav class="navbar navbar-default" role="navigation">
-				<div class="navbar-header">
-					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">壹佳陆</a><!-- <img src="<%=basePath%>resources/images/logo.png" width="40px" /> -->
-				<!-- </div>
-				
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active">
-							 <a href="#">首页</a>
-						</li>
-						<li>
-							 <a href="#">作品展示</a>
-						</li>
-						<li>
-							 <a href="#">收藏知识</a>
-						</li>
-						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于我们<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li>
-									 <a href="#">联系方式</a>
-								</li>
-								<li>
-									 <a href="#">诚聘英才</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									 <a href="#">企业文化</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									 <a href="#">其他信息</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-					
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							 <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;游客</a>
-						</li>
-						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">user1<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li>
-									 <a href="#">个人信息&nbsp;&nbsp;<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-								</li>
-								<li>
-									 <a href="#">喜好&nbsp;&nbsp;<span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									 <a href="#">修改密码&nbsp;&nbsp;<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				
-			</nav> --> 
 			<div class="row clearfix">
 				<div class="col-md-8 column">
 					<div class="carousel slide" id="carousel-659411">
@@ -140,69 +74,17 @@
 							<div class="row">
 								<div class="col-xs-12">
 									<ul class="demo1">
-										<li class="news-item">
-											<table cellpadding="4">
-												<tr>
-													<td><img src="<%=basePath%>resources/images/8.png" width="40px" class="img-rounded" /></td>
-													<!-- <td><strong>5分钟前</strong>收到 <a href="#">邮箱联系人Hillary</a>发送的邮件......<small><a href="#">详细内容</a></small></td> -->
-													<td>&nbsp;<a href="#">贺：国玉大酒店与我北京壹佳陆拍卖公司</a></td>
-												</tr>
-											</table>
-										</li>
-										<li class="news-item">
-											<table cellpadding="4">
-												<tr>
-													<td><img src="<%=basePath%>resources/images/8.png" width="40px" class="img-rounded" /></td>
-													<!-- <td><strong>6分钟前</strong>接听了 <a href="#">手机联系人Hillary</a>打来的电话 ......<small><a href="#">详细内容</a></small></td> -->
-													<td>&nbsp;<a href="#">北京壹佳陆将于本月12、13日举办专</a></td>
-												</tr>
-											</table>
-										</li>
-										<li class="news-item">
-											<table cellpadding="4">
-												<tr>
-													<td><img src="<%=basePath%>resources/images/8.png" width="40px" class="img-rounded" /></td>
-													<!-- <td><strong>8分钟内</strong>收到 <a href="#">Facebook好友Hillary</a>的点赞 ......<small><a href="#">详细内容</a></small></td> -->
-													<td>&nbsp;<a href="#">赵宝乐老师为北京壹佳陆即将迎来的拍卖</a></td>
-												</tr>
-											</table>
-										</li>
-										<li class="news-item">
-											<table cellpadding="4">
-												<tr>
-													<td><img src="<%=basePath%>resources/images/8.png" width="40px" class="img-rounded" /></td>
-													<!-- <td><strong>10分钟前</strong>收到 <a href="#">Twitter好友Hillary</a>的点赞 ......<small><a href="#">详细内容</a></small></td> -->
-													<td>&nbsp;<a href="#">热烈祝贺北京壹佳陆携手北京市紧急救援</a></td>
-												</tr>
-											</table>
-										</li>
-										<li class="news-item">
-											<table cellpadding="4">
-												<tr>
-													<td><img src="<%=basePath%>resources/images/8.png" width="40px" class="img-rounded" /></td>
-													<!-- <td><strong>15分钟前</strong>收到 <a href="#">Skype好友Hillary</a>的视频邀请 ......<small><a href="#">详细内容</a></small></td> -->
-													<td>&nbsp;<a href="#">赵宝乐先生为北京壹嘉陆拍卖有限公司题</a></td>
-												</tr>
-											</table>
-										</li>
-										<li class="news-item">
-											<table cellpadding="4">
-												<tr>
-													<td><img src="<%=basePath%>resources/images/8.png" width="40px" class="img-rounded" /></td>
-													<!-- <td><strong>20分钟前</strong>收到 <a href="#">Facebook好友Hillary</a>的点赞 ......<small><a href="#">详细内容</a></small></td> -->
-													<td>&nbsp;<a href="#">著名相声演员赵宝乐先生、著名画家罗家</a></td>
-												</tr>
-											</table>
-										</li>
-										<li class="news-item">
-											<table cellpadding="4">
-												<tr>
-													<td><img src="<%=basePath%>resources/images/8.png" width="40px" class="img-rounded" /></td>
-													<!-- <td><strong>25分钟前</strong>接受了 <a href="#">BBC记者Hillary</a>的采访 ......<small><a href="#">详细内容</a></small></td> -->
-													<td>&nbsp;<a href="#">贺：北京中智慧通与我北京壹佳陆</a></td>
-												</tr>
-											</table>
-										</li>
+										<c:forEach items="${news_list}" var="l" varStatus="vs">
+											<li class="news-item">
+												<table cellpadding="4">
+													<tr>
+														<td><img src="<%=basePath%>resources/images/8.png" width="40px" class="img-rounded" /></td>
+														<!-- <td><strong>5分钟前</strong>收到 <a href="#">邮箱联系人Hillary</a>发送的邮件......<small><a href="#">详细内容</a></small></td> -->
+														<td>&nbsp;<a href="#"><%--<fmt:formatDate value="${new.create_time}" pattern="yyyy/MM/dd" />--%>${l.title}</a></td>
+													</tr>
+												</table>
+											</li>
+										</c:forEach>
 									</ul>
 								</div>
 							</div>

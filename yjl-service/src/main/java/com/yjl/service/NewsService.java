@@ -11,4 +11,5 @@ public interface NewsService extends BaseService<News> {
 
     List<News> getProductList();
 
+    List<News> getProductListTop();
 }

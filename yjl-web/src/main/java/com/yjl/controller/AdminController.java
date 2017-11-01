@@ -125,7 +125,7 @@ public class AdminController {
 
     @ResponseBody
     @RequestMapping(value = "getOrderList")
-    public List<OrderVo> getOrderlist(){
+    public List<OrderVo> getOrderlist(@RequestParam("offset") int pageNo, @RequestParam("limit") int pageSize, @RequestParam("order") String o){
         List<Order> orderList = orderService.getOrderList();
         List<OrderVo> orderVos = new ArrayList<>();
         for(Order order : orderList){

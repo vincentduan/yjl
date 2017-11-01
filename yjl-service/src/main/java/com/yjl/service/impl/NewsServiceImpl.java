@@ -18,7 +18,18 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public List<News> getProductList() {
-        return newsMapper.selectByExample(new NewsExample());
+        NewsExample newsExample = new NewsExample();
+        newsExample.setOrderByClause("create_time desc");
+        return newsMapper.selectByExample(newsExample);
+    }
+
+    @Override
+    public List<News> getProductListTop() {
+        NewsExample newsExample = new NewsExample();
+        newsExample.setOrderByClause("create_time desc");
+        newsExample.setLimitStart(0);
+        newsExample.setLimitEnd(10);
+        return newsMapper.selectByExample(newsExample);
     }
 
     @Override

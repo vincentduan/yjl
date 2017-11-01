@@ -62,5 +62,6 @@ public class NewsController {
         return "redirect:/admin/index";
     }
 
+
 }
 
