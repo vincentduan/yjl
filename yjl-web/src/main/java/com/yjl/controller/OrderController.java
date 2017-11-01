@@ -30,4 +30,9 @@ public class OrderController {
         return save == 1? "redirect:/index/index":"redirect:/exhibition／detail/"+product_id;
     }
 
+    @RequestMapping(value = "index", method = RequestMethod.GET)
+    public String index(){
+        return "order";
+    }
+
 }

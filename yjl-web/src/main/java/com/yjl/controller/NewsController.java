@@ -18,6 +18,11 @@ public class NewsController {
     @Autowired
     NewsService newsService;
 
+    @RequestMapping("/index")
+    public String index(){
+        return "news";
+    }
+
     @RequestMapping("/getNewsList")
     @ResponseBody
     public List<News> getNewsList(@RequestParam("offset") int pageNo, @RequestParam("limit") int pageSize) {
@@ -62,6 +67,12 @@ public class NewsController {
         return "redirect:/admin/index";
     }
 
+    @RequestMapping(value = "del/{id}", method = RequestMethod.GET)
+    public String del(@PathVariable Long id, HttpServletRequest request){
+
+        newsService.deleteById(id);
+        return "redirect:/admin/index";
+    }
 
 }
 

@@ -119,6 +119,7 @@
         });
     }
     function getNewsList(){
+        //window.location.href="<%=basePath%>admin/index";
         var url = "<%=basePath%>news/getNewsList";
         $(".product-table").bootstrapTable('destroy');
         $(".product-table").bootstrapTable({
